@@ -2,15 +2,16 @@
 
 
 require_once $conf->root_path.'/lib/smarty/Smarty.class.php';
-require_once $conf->root_path.'/app/Messages.class.php';
-require_once $conf->root_path.'/app/CalcData.class.php';
-require_once $conf->root_path.'/app/CalcResult.class.php';
+require_once $conf->root_path.'/app/calc/Messages.class.php';
+require_once $conf->root_path.'/app/calc/CalcData.class.php';
+require_once $conf->root_path.'/app/calc/CalcResult.class.php';
 
 
 
 class CalcCtrl {
 
     private $mess;
+	private $infos;
     private $data;
     private $result;
 
@@ -109,7 +110,7 @@ public function generateView(){
 		$smarty->assign('data',$this->data);
 		$smarty->assign('result',$this->result);
 		
-		$smarty->display($conf->root_path.'/app/CalcView.html');
+		$smarty->display($conf->root_path.'/app/calc/CalcView.html');
 	}
 
 }
