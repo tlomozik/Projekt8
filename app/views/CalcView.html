@@ -1,4 +1,4 @@
-{extends file=$conf->root_path|cat:"/templates/main.html"}
+{extends file="main.html"}
 
 {block name=footer}
 <footer id="footer">
@@ -45,10 +45,10 @@
 <div class="messages">
 
 	{* wyświeltenie listy błędów, jeśli istnieją *}
-	{if $mess->isError()}
+	{if $msgs->isError()}
 	<h4>Wystąpiły błędy: </h4>
 	<ol class="err">
-		{foreach $mess->getErrors() as $err}
+		{foreach $msgs->getErrors() as $err}
 		{strip}
 		<li>{$err}</li>
 		{/strip}
@@ -57,10 +57,10 @@
 	{/if}
 
 	{* wyświeltenie listy informacji, jeśli istnieją *}
-	{if $mess->isInfo()}
+	{if $msgs->isInfo()}
 	<h4>Informacje: </h4>
 	<ol class="inf">
-		{foreach $mess->getInfos() as $inf}
+		{foreach $msgs->getInfos() as $inf}
 		{strip}
 		<li>{$inf}</li>
 		{/strip}
