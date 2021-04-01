@@ -1,10 +1,10 @@
 <?php
 
 
-require_once 'CalcData.class.php';
-require_once 'CalcResult.class.php';
+namespace app\controllers;
 
-
+use app\forms\CalcData;
+use app\transfer\CalcResult;
 
 class CalcCtrl {
 
