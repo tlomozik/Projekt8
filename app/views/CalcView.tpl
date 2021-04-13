@@ -1,4 +1,4 @@
-{extends file="main.html"}
+{extends file="main.tpl"}
 
 {block name=footer}
 <footer id="footer">
@@ -16,6 +16,11 @@
 
 {block name=content}
 
+<div>
+	<a href="{$conf->action_url}logout" >wyloguj</a>
+	
+	
+</div>
 
 
 		<section>

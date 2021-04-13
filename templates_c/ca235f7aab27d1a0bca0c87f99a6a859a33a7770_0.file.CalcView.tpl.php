@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-03-19 21:43:56
-  from 'E:\XAMPP\htdocs\Projekt6-objective\app\calc\CalcView.html' */
+/* Smarty version 3.1.39, created on 2021-04-09 17:43:00
+  from 'E:\XAMPP\htdocs\Projekt6-objective\app\views\CalcView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60550d0c361623_93591614',
+  'unifunc' => 'content_6070760409ec75_42723274',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '2501066b3b79561e546fa07c3aa14c7bde6395cb' => 
+    'ca235f7aab27d1a0bca0c87f99a6a859a33a7770' => 
     array (
-      0 => 'E:\\XAMPP\\htdocs\\Projekt6-objective\\app\\calc\\CalcView.html',
-      1 => 1616186429,
+      0 => 'E:\\XAMPP\\htdocs\\Projekt6-objective\\app\\views\\CalcView.tpl',
+      1 => 1617982973,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60550d0c361623_93591614 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6070760409ec75_42723274 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_27745863960550d0c34f6a2_10753217', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_146982355060707604078ae5_66690214', 'footer');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_66397199960550d0c3500d4_12474010', 'content');
-$_smarty_tpl->inheritance->endChild($_smarty_tpl, ($_smarty_tpl->tpl_vars['conf']->value->root_path).("/templates/main.html"));
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_21456217246070760407a192_21686884', 'content');
+$_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'footer'} */
-class Block_27745863960550d0c34f6a2_10753217 extends Smarty_Internal_Block
+class Block_146982355060707604078ae5_66690214 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_27745863960550d0c34f6a2_10753217',
+    0 => 'Block_146982355060707604078ae5_66690214',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -63,18 +63,26 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_66397199960550d0c3500d4_12474010 extends Smarty_Internal_Block
+class Block_21456217246070760407a192_21686884 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_66397199960550d0c3500d4_12474010',
+    0 => 'Block_21456217246070760407a192_21686884',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
+<div>
+	<a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+logout" >wyloguj</a>
+	<span> użytkownik: <?php echo $_smarty_tpl->tpl_vars['user']->value->login;?>
+, rola: <?php echo $_smarty_tpl->tpl_vars['user']->value->role;?>
+</span>
+	
+</div>
 
 
 		<section>
@@ -107,11 +115,11 @@ calcCredit" method="post">
 
 <div class="messages">
 
-		<?php if ($_smarty_tpl->tpl_vars['mess']->value->isError()) {?>
+		<?php if ($_smarty_tpl->tpl_vars['msgs']->value->isError()) {?>
 	<h4>Wystąpiły błędy: </h4>
 	<ol class="err">
 		<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['mess']->value->getErrors(), 'err');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['msgs']->value->getErrors(), 'err');
 $_smarty_tpl->tpl_vars['err']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['err']->value) {
 $_smarty_tpl->tpl_vars['err']->do_else = false;
@@ -124,11 +132,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	</ol>
 	<?php }?>
 
-		<?php if ($_smarty_tpl->tpl_vars['mess']->value->isInfo()) {?>
+		<?php if ($_smarty_tpl->tpl_vars['msgs']->value->isInfo()) {?>
 	<h4>Informacje: </h4>
 	<ol class="inf">
 		<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['mess']->value->getInfos(), 'inf');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['msgs']->value->getInfos(), 'inf');
 $_smarty_tpl->tpl_vars['inf']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['inf']->value) {
 $_smarty_tpl->tpl_vars['inf']->do_else = false;

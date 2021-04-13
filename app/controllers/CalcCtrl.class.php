@@ -103,7 +103,7 @@ public function generateView(){
 		getSmarty()->assign('data',$this->data);
 		getSmarty()->assign('result',$this->result);
 		
-		getSmarty()->display('CalcView.html');
+		getSmarty()->display('CalcView.tpl');
 	}
 
 }
