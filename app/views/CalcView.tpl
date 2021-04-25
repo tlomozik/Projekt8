@@ -25,7 +25,7 @@
 
 		<section>
 			<h3>Kalkulator kredytowy</h3>
-			<form action="{$conf->action_root}calcCredit" method="post">
+			<form action="{$conf->action_url}calcCompute" method="post">
 				<div class="row gtr-uniform gtr-50">
 					<div class="col-3 col-12-xsmall">
 						<input type="text" placeholder="Kwota" name="amount" value="{$data->amount}">

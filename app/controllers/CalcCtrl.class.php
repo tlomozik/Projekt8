@@ -69,7 +69,7 @@ return ! getMessages()->isError();
 
 }
 
-public function process(){
+public function action_calcCompute(){
 
 		$this->getparams();
 
@@ -89,7 +89,10 @@ if ($this->validate()) {
 $this->generateView();
 }
 
-
+public function action_calcShow(){
+		getMessages()->addInfo('Witaj w kalkulatorze');
+		$this->generateView();
+	}
 
 public function generateView(){
 		
