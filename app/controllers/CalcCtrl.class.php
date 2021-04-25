@@ -92,10 +92,10 @@ $this->generateView();
 
 
 public function generateView(){
-		global $conf;
 		
 		
 		
+		getSmarty()->assign('user',unserialize($_SESSION['user']));
 		getSmarty()->assign('page_title','Kalkulator kredytowy');
 		getSmarty()->assign('page_description','Kalkulator słuzący do obliczania miesięcznego oprocentowania');
 		getSmarty()->assign('page_header','Kalkulator kredytowy');
