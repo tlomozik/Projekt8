@@ -4,7 +4,7 @@
 //konfiguracja
 $conf->server_name = 'localhost';
 $conf->server_url = 'http://'.$conf->server_name;
-$conf->app_root = '/Projekt7-a_b';
+$conf->app_root = '/Projekt8';
 $conf->action_root = $conf->app_root.'/ctrl.php?action=';
 
 //wartości wygenerowane, lub na podstawie powyższych

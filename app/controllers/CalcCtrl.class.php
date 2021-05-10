@@ -86,6 +86,42 @@ if ($this->validate()) {
 
      getMessages()->addInfo('Wykonano obliczenia.');
 }
+try{
+$database = new \Medoo\Medoo([
+
+	'type' => 'mysql',
+	'host' => 'localhost',
+	'database' => 'calc_db',
+	'username' => 'root',
+	'password' => '',
+	'charset' => 'utf8',
+	'collation' => 'utf8_polish_ci',
+	'port' => 3306,
+	'option' => [
+		\PDO::ATTR_CASE => \PDO::CASE_NATURAL,
+		\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION
+	]
+ 
+]);
+
+$database->insert("wynik", [
+	"kwota" => $this->data->amount,
+	"lata" =>  $this->data->years,
+	"oprocentowanie" =>  $this->data->percentage,
+	"wynik"=> $this->result->result
+]);
+
+
+
+
+
+
+	}
+	catch(\PDOException $ex){
+
+		getMessages()->addError("DB ERROR: ".$ex->getMessage());
+	}
+
 $this->generateView();
 }
 
